@@ -1,1 +1,0 @@
-{"version":3,"sources":["message.ts","index.ts"],"names":[],"mappings":";;;;;AAAA,OAAA,CAAA,OAAA,GAAe,cAAf;;;;;;;ACAA,IAAA,SAAA,GAAA,eAAA,CAAA,OAAA,CAAA,WAAA,CAAA,CAAA;;AACA,OAAO,CAAC,GAAR,CAAY,SAAA,CAAA,OAAZ","file":"molgan.77de5100.js","sourceRoot":"..","sourcesContent":["export default 'Hello, world'","import message from './message'\nconsole.log(message)"]}
