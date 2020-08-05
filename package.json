@@ -1,0 +1,16 @@
+{
+  "name": "molgan",
+  "version": "1.0.0",
+  "description": "Wrapper around the web speech API",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carl Åberg",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.9.7"
+  }
+}
