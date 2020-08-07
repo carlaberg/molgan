@@ -1,5 +1,3 @@
-import { throws } from "assert";
-
 export class AudioProcessor {
   recognition: any = new (<any>window).webkitSpeechRecognition();
   result: string = '';

@@ -1,10 +1,11 @@
 {
   "name": "molgan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper around the web speech API",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "parcel index.html",
+    "dev": "parcel examples/index.html",
+    "build": "parcel build index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Carl Åberg",

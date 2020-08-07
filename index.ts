@@ -1,10 +1,3 @@
-import message from './message'
-console.log(message)
+import { AudioProcessor } from "./AudioProcessor";
 
-// import scripts
-import { AudioProcessor } from './AudioProcessor';
-
-// run scripts
-const audio = new AudioProcessor();
-audio.init();
-audio.addResultHandler('print');
+export * as AudioProcessor from './AudioProcessor'
