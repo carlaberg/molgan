@@ -20,20 +20,24 @@ export class AudioProcessor {
   }
   
   public handleResult = (e: Event):void => {
-    this.resultCallbacks.forEach(method => this.handlerList[method](e));
+    this.resultCallbacks.forEach((method: string) => this.handlerList[method](e));
   }
   
   public addResultHandler = (handler: string):void => {
     this.resultCallbacks.push(handler);
   }
   
-  private print = (e): void => {
+  private print = (e: any): void => {
     const span = document.createElement('div');
     span.innerHTML = e.results[0][0].transcript;
-    document.querySelector('body').appendChild(span);
+    const bodyElement = document.querySelector('body')
+
+    if (bodyElement) {
+      bodyElement.appendChild(span);
+    }
   }
   
-  private handleError = (e) => {
-    // console.log(e);
+  private handleError = (e: Event) => {
+    console.log(e);
   }
 }
