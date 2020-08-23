@@ -1,8 +1,11 @@
-export class AudioProcessor {
+import { Events, EventTypes } from './Events'
+
+export class Molgan {
   recognition: any = new (<any>window).webkitSpeechRecognition();
   result: string = '';
   resultCallbacks: any = [];
   handlerList: any;
+  events: Events = new Events()
   
   public init = (): void => {
     this.handlerList = { print: this.print };
@@ -15,17 +18,17 @@ export class AudioProcessor {
   }
    
   private addEventListeners = ():void => {
-    this.recognition.onresult = this.handleResult;
+    this.recognition.onresult = (e: Event) => this.events.triggerEvent(EventTypes.ON_RECOGNITION, e);
     this.recognition.onerror = this.handleError;
   }
   
-  public handleResult = (e: Event):void => {
-    this.resultCallbacks.forEach((method: string) => this.handlerList[method](e));
-  }
+  // public handleResult = (e: Event):void => {
+  //   this.resultCallbacks.forEach((method: string) => this.handlerList[method](e));
+  // }
   
-  public addResultHandler = (handler: string):void => {
-    this.resultCallbacks.push(handler);
-  }
+  // public addResultHandler = (handler: string):void => {
+  //   this.resultCallbacks.push(handler);
+  // }
   
   private print = (e: any): void => {
     const span = document.createElement('div');

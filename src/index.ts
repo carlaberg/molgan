@@ -1,7 +1,10 @@
 // import scripts
-import { AudioProcessor } from './AudioProcessor';
+import { Molgan } from './Molgan';
 
 // run scripts
-const audio = new AudioProcessor();
-audio.init();
-audio.addResultHandler('print');
+const molgan = new Molgan();
+molgan.init();
+molgan.events.on('ON_RECOGNITION', (e) => console.log(e))
+molgan.events.on('ON_RECOGNITION', (e) => console.log(e))
+console.log(molgan.events.events)
+// molgan.addResultHandler('print');
