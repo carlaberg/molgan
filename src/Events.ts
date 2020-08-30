@@ -13,7 +13,7 @@ export class Events {
     this.events[eventName] = handlers;
   };
 
-  triggerEvent = (eventName: string, e?: Event): void => {
+  triggerEvent = (eventName: string, e: any): void => {
     const handlers = this.events[eventName];
 
     if (!handlers || handlers.length === 0) {
