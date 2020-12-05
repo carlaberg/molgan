@@ -4,14 +4,20 @@
   "description": "Wrapper around the web speech API",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "parcel examples/index.html",
-    "build": "parcel build index.ts",
-    "test": "echo \"no test specified\""
+    "dev": "webpack-dev-server --hot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "Carl Åberg",
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "ts-loader": "^8.0.2"
   }
 }
