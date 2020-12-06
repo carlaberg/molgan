@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --hot",
     "test": "echo \"no test specified\"",
-    "build": "webpack"
+    "build": "tsc"
   },
   "author": "Carl Åberg",
   "license": "ISC",
