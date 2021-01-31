@@ -2,10 +2,10 @@ export enum EventTypes {
   ON_RECOGNITION = 'ON_RECOGNITION'
 }
 
-type EventCallback = (e?: Event) => void;
+type EventCallback = (e?: any) => void;
 
 export class Events {
-  events: { [key: string]: EventCallback[] } = {};
+  private events: { [key: string]: EventCallback[] } = {};
 
   on = (eventName: string, callback: EventCallback): void => {
     const handlers = this.events[eventName] || [];
