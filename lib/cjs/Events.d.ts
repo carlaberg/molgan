@@ -1,11 +1,9 @@
 export declare enum EventTypes {
     ON_RECOGNITION = "ON_RECOGNITION"
 }
-declare type EventCallback = (e?: Event) => void;
+declare type EventCallback = (e?: any) => void;
 export declare class Events {
-    events: {
-        [key: string]: EventCallback[];
-    };
+    private events;
     on: (eventName: string, callback: EventCallback) => void;
     triggerEvent: (eventName: string, e: any) => void;
 }
