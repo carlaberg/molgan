@@ -1,2 +1,3 @@
 import { Molgan } from './Molgan';
-export { Molgan };
+declare const molgan: Molgan;
+export { molgan };

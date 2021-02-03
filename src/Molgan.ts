@@ -1,13 +1,28 @@
 import { Events, EventTypes } from './Events'
 import { CommandHandler } from './CommandHandler'
+import { MolganError } from './MolganError';
+
+declare global {
+  interface Window {
+    webkitSpeechRecognition: any;
+  }
+}
 
 export class Molgan {
   
   private static instance: Molgan;
-  recognition: any = new (window as any).webkitSpeechRecognition();
-  synthesis: any = window.speechSynthesis;
+  private isRecognitionActive: boolean = false;
+  recognition: any;
+  synthesis: any;
   private _events: Events = new Events();
   private _commandHandler: CommandHandler = new CommandHandler();
+
+  constructor() {
+    if (typeof window !== 'undefined') {
+      this.recognition = new window.webkitSpeechRecognition();
+      this.synthesis = window.speechSynthesis;
+    }
+  }
 
   static getInstance() {
     if (!this.instance) {
@@ -18,9 +33,13 @@ export class Molgan {
   }
   
   public init = (): void => {
+    if (this.isRecognitionActive) {
+      throw new MolganError('There is already an active recognition.');
+    }
 
     console.log('initiated');
     this.recognition.start();
+    this.isRecognitionActive = true;
     this.addEventListeners();
     this.recognition.onend = this.recognition.start;
   }

@@ -1,8 +1,17 @@
+declare global {
+    interface Window {
+        webkitSpeechRecognition: any;
+    }
+}
 export declare class Molgan {
+    private static instance;
+    private isRecognitionActive;
     recognition: any;
     synthesis: any;
     private _events;
     private _commandHandler;
+    constructor();
+    static getInstance(): Molgan;
     init: () => void;
     private addEventListeners;
     private onResult;
