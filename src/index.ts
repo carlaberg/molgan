@@ -1,3 +1,3 @@
 import { Molgan } from './Molgan';
-
-export { Molgan };
+const molgan = Molgan.getInstance() 
+export { molgan };

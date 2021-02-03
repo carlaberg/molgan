@@ -3,10 +3,19 @@ import { CommandHandler } from './CommandHandler'
 
 export class Molgan {
   
+  private static instance: Molgan;
   recognition: any = new (window as any).webkitSpeechRecognition();
   synthesis: any = window.speechSynthesis;
   private _events: Events = new Events();
   private _commandHandler: CommandHandler = new CommandHandler();
+
+  static getInstance() {
+    if (!this.instance) {
+      this.instance = new Molgan();
+    }
+
+    return this.instance;    
+  }
   
   public init = (): void => {
 

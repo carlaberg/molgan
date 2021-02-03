@@ -1,6 +1,7 @@
-import { Molgan } from './Molgan';
+import { molgan } from './';
 
-const molgan = new Molgan();
+// console.log(molgan2)
+
 
 molgan.init();
 
